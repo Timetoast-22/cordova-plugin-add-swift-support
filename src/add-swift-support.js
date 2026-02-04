@@ -66,6 +66,7 @@ module.exports = context => {
       pbxprojPath = path.join(platformPath, projectName + '.xcodeproj', 'project.pbxproj');
       xcodeProject = xcode.project(pbxprojPath);
       pluginsPath = path.join(projectPath, 'Plugins');
+      console.log('project name: ', projectName);
 
       xcodeProject.parseSync();
 
@@ -160,7 +161,7 @@ module.exports = context => {
             }
           }
         }
-
+        console.log('Write updated file');
         fs.writeFileSync(pbxprojPath, xcodeProject.writeSync());
       });
     });
