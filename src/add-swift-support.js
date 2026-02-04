@@ -64,7 +64,7 @@ module.exports = context => {
       projectName = path.basename(iosProject.locations.xcodeCordovaProj);
       projectPath = path.join(platformPath, projectName);
       pbxprojPath = path.join(platformPath, projectName + '.xcodeproj', 'project.pbxproj');
-      xcodeProject = xcode.project(iosProject.locations.pbxproj);
+      xcodeProject = xcode.project(pbxprojPath);
       pluginsPath = path.join(projectPath, 'Plugins');
 
       xcodeProject.parseSync();
